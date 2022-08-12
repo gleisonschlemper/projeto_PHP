@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            outline: none;
+            text-decoration: none;
+        }
+        
+        :root {
+            
+        }
+
+        body{
+            max-width: 100vw;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        aside{
+            position: absolute;
+            width: 25vw;
+            top: 0;
+            height: 100vh;
+            background: black;
+            transition: 2s;
+        }
+
+        /*
+        
+        
+        */
+
+        header{
+            width: 100%;
+            height:100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .link{
+            width:30%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .link img{
+            width: 180px;
+            height:140px;
+        }
+
+        ol{
+            width: 45%;
+            height: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            font-family: 'Roboto';
+        }
+
+        ol li{ 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+
+        ol li .flecha_baixo{
+            font-size:40px;
+        }
+
+        .menu{
+            flex: 1;
+            font-size: 60px;
+            z-index: 99;
+            top: 20px;
+            left: 90%;
+            cursor: pointer;
+            transition: 2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .li_login{
+            height: 100%;
+            
+        }
+
+        .ol_login{
+            width: 17%;
+            height: 250px;
+            display:none;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            border-radius: 15px;
+        }
+
+        .li_login:hover .ol_login{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
+            left: 60vw;
+        }
+        .ol_login label{
+            width: 70%;
+            text-align: center;
+           
+        }
+        /*
+        
+        */
+
+        main{
+            width: 100%;
+            height: calc(100vh - 100px - 15vh );
+            background: aqua;
+            display: flex;
+        }
+
+
+        main #conteinerSliders{
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+        }
+        footer{
+            width: 100%;
+            height: 15vh;
+            background: rgb(0, 0, 0);
+
+        }
+        @media(max-width:800px){
+            ol{
+                display: none;
+            }
+        }
+
+    </style>
+    <title>Cadastro</title>
+</head>
+<body>   
+    <header>
+        <a href="" class="link">
+            <img src="../projeto_PHP/photos/logo-perfect.png" alt="" srcset="">
+        </a>
+
+         <ol>
+            <a href=""><li>Home</li></a>
+            <a href=""><li>Saiba mais</li></a>
+            <a href=""><li>Fale conosco</li> </a>         
+            <li class="li_login">login
+                <span class="material-symbols-outlined flecha_baixo">expand_more</span>
+
+                <form class="ol_login">
+                    <b>Fazer login</b>
+                    <label for="email">
+                        Informe seu email
+                        <input type="email" name="email" id="email" maxlength="100" required autocomplete="email" autofocus>
+                    </label>
+
+                    <label for="senha">
+                        Informe sua senha
+                        <input type="password" name="senha" id="senha" maxlength="100" autocomplete="new-password"> 
+                    </label>
+
+                </form>
+            </li>
+        </ol>
+
+        <div class="material-symbols-outlined menu" onclick="asideControle()">
+            menu
+        </div>
+    </header>
+    <aside>     
+    </aside>
+    <main>
+        <section id="conteinerSliders">
+            <div class="sliders">
+                <input type="radio" id="slider1" name="slider"> 
+                <input type="radio" id="slider2"  name="slider"> 
+                <input type="radio" id="slider3"  name="slider"> 
+
+                <div class="slider"></div>
+                <div class="slider"></div>
+                <div class="slider"></div>
+            </div>
+            <div class="pointer">
+                <label for="slider1">.</label>
+                <label for="slider2">.</label>
+                <label for="slider3">.</label>
+            </div>
+
+
+        </section>
+    </main>
+    
+   <footer>
+
+   </footer>
+
+    <script>
+        var aside = document.querySelector('aside').style.right = '-25%';
+        function asideControle(){
+
+            if(document.querySelector('aside').style.right == '-25%'){
+                document.querySelector('aside').style.right = '0%';
+                document.querySelector('.menu').style.color = 'white';
+            }
+            else{
+                document.querySelector('aside').style.right = '-25%';
+                document.querySelector('.menu').style.color = 'black';
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>
