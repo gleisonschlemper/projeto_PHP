@@ -31,8 +31,9 @@
 
         aside{
             position: absolute;
-            width: 25vw;
+            width: 20vw;
             top: 0;
+            z-index: 99;
             height: 100vh;
             background: black;
             transition: 2s;
@@ -87,16 +88,12 @@
         }
 
         .menu{
-            flex: 1;
             font-size: 60px;
-            z-index: 99;
-            top: 20px;
-            left: 90%;
+            z-index: 999;
             cursor: pointer;
             transition: 2s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            position: relative;
+            right: 50px;
         }
 
 
@@ -120,7 +117,10 @@
             justify-content: space-around;
             flex-direction: column;
             align-items: center;
-            left: 60vw;
+            left: 40vw;
+            background: #eee;
+            border: 3px solid black;
+            z-index: 9999;
         }
         .ol_login label{
             width: 70%;
@@ -135,14 +135,19 @@
             width: 100%;
             height: calc(100vh - 100px - 15vh );
             display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+
         }
 
 
         main #conteinerSliders{
-            width: 50%;
-            height: 100%;
+            width: 40%;
+            height: 80%;
             overflow: hidden;
             position: relative;
+            
         }
         main #conteinerSliders .sliders{
             width: 300vw;
@@ -165,16 +170,13 @@
             position: absolute;
             bottom: 0;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             gap: 20px;
         }
 
         main #conteinerSliders .pointer .click{
-            width: 35px;
-            height: 35px;
-            border-radius: 100%;
-            background: rgb(0, 0, 0);
+            font-size: 70px;
         }
         #slider1:checked ~ #card1{
           margin-left: 0vw;
@@ -186,8 +188,52 @@
         #slider3:checked ~ #card3{
             margin-left: -200vw;
         }
+        /**/
+
+        #formularioCadastro{
+            width: 23%;
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 50px;
+            border: 4px solid rgba(0, 0, 0, 0.931);
+            box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.931);
+        }
+
+        #formularioCadastro .inputBox{
+            position: relative;
+            height: 40px;
+        }
+        
+        #formularioCadastro .inputBox .labelCadastro{
+            position: absolute;
+            top: 0;
+        }
+        #formularioCadastro .inputBox .inputCadastro{
+            width: 100%;
+            background-color: #eee;
+            border: none;
+            border-bottom: 1px solid rgb(0, 0, 0);
+            outline: none;
+            color: black;
+            text-align: center;
+        }
+
+       
 
 
+        
+        /*
+        
+        .inputCadastro:focus ~ .labelCadastro{
+            margin-bottom: 20px;
+        }
+        
+        
+        
+        */
 
 
         footer{
@@ -206,7 +252,29 @@
             height: 43px;
         }
 
-        @media(max-width:800px){
+        @media(max-width:700px){
+           body{
+            overflow: hidden;
+           }
+           main{
+            width: 100%;
+            height: calc(150vh - 100px - 15vh );
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+
+        }
+           
+        
+        main #conteinerSliders{
+            width: 100%;
+            height: 40%;
+            overflow: hidden;
+            position: relative;
+            
+        }
             ol{
                 display: none;
             }
@@ -222,9 +290,6 @@
         </a>
 
          <ol>
-            <a href=""><li>Home</li></a>
-            <a href=""><li>Saiba mais</li></a>
-            <a href=""><li>Fale conosco</li> </a>         
             <li class="li_login">login
                 <span class="material-symbols-outlined flecha_baixo">expand_more</span>
 
@@ -240,8 +305,13 @@
                         <input type="password" name="senha" id="senha" maxlength="100" autocomplete="new-password"> 
                     </label>
 
+                    <input type="submit" value="enviar">
                 </form>
             </li>
+            <a href=""><li>Home</li></a>
+            <a href=""><li>Saiba mais</li></a>
+            <a href=""><li>Fale conosco</li> </a>         
+            
         </ol>
 
         <div class="material-symbols-outlined menu" onclick="asideControle()">
@@ -261,22 +331,40 @@
                 <div class="slider" id="card2"></div>
                 <div class="slider" id="card3"></div>
             </div>
+
             <div class="pointer">
-                <label for="slider1" class="click">.</label>
-                <label for="slider2" class="click">.</label>
-                <label for="slider3" class="click">.</label>
+                <span class="material-symbols-outlined click">
+                    arrow_back
+                </span>
+
+                <span class="material-symbols-outlined click">
+                    arrow_forward
+                </span>
             </div>
 
 
         </section>
 
-        <section id="formularioCadastro">
+        <form action="../projeto_PHP/banco_de_dados/adicionar.php" method="post" id="formularioCadastro">
+            <h1>CADASTRO</h1>
+            <div class="inputBox">
+                <input type="text" name="nome" id="nomeCadastro" class="inputCadastro" placeholder="DIGITE SEU NOME">
+            </div>
 
-        </section>
+            <div class="inputBox" >
+                <input type="email" name="email" id="emailCadastro" class="inputCadastro" placeholder="DIGITE SEU EMAIL">       
+            </div>
+                    
+            <div class="inputBox" >
+                <input type="password" name="senha" id="senhaCadastro" class="inputCadastro" placeholder="DIGITE SUA SENHA">
+            </div>
+
+            <input type="submit" value="enviar" onclick="enviar()">
+        </form>
     </main>
     
    <footer>
-    <a href=""><img src="../projeto_PHP/photos/github.png" alt="" class="photo"></a>
+    <a href="https://github.com/gleisonschlemper"><img src="../projeto_PHP/photos/github.png" alt="" class="photo"></a>
     <a href=""><img src="../projeto_PHP/photos/facebook.png" alt="" class="photo"></a>
     <a href=""><img src="../projeto_PHP/photos/logotipo-do-linkedin.png" alt="" class="photo"></a>
     
@@ -296,6 +384,10 @@
                 document.querySelector('aside').style.right = '-25%';
                 document.querySelector('.menu').style.color = 'black';
             }
+        }
+
+        function abrirClick(){
+            document.querySelector('.labelCadastro').style.bottom = '50px';
         }
 
 
