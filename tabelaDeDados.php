@@ -1,6 +1,6 @@
 <?php
 
-require '../projeto_PHP/banco_de_dados/bancoDeDados.php';
+require 'banco_de_dados/bancoDeDados.php';
 
 
 ?>
