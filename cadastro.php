@@ -15,14 +15,20 @@
         </a>
 
          <ol>
-            <li class="li_login">login
+            <li class="li_login" >
+                <p onclick="chamarLogin()">login</p> 
                 <span class="material-symbols-outlined flecha_baixo">expand_more</span>
-
-                <form class="ol_login">
+ 
+                <form class="ol_login" action="../projeto_PHP/login.php" method="post" >
                     <b>Fazer login</b>
                     <label for="email">
                         Informe seu email
-                        <input type="email" name="email" id="email" maxlength="100" required autocomplete="email" autofocus>
+                        <input type="email" name="email" id="email" maxlength="100" required autocomplete="email" autofocus list="emailCadastrado">
+
+                        <datalist id="emailCadastrado">
+                            <option>maria@gmail.com</option>
+
+                        </datalist>
                     </label>
 
                     <label for="senha">

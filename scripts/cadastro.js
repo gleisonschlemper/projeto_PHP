@@ -14,4 +14,12 @@ function abrirClick(){
     document.querySelector('.labelCadastro').style.bottom = '50px';
 }
 
-function 
+function chamarLogin(){
+    if(document.querySelector('.ol_login').style.display == 'none'){
+        document.querySelector('.ol_login').style.display = 'flex'
+    }
+    else{
+        document.querySelector('.ol_login').style.display = 'none'
+    }
+   
+}
