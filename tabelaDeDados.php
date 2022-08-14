@@ -18,6 +18,7 @@ if($sql->rowCount() > 0){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         *{
             margin: 0;
@@ -33,11 +34,13 @@ if($sql->rowCount() > 0){
         header{
             height: 70px;
             width: 100%;
+            display: flex;
+            align-items: center;
         }
 
         header .cadastro{
             width: 100px;
-            height: 30px;
+            height: 60px;
             background-color: red;
         }
 
@@ -46,7 +49,7 @@ if($sql->rowCount() > 0){
 </head>
 <body>
     <header>
-        <a href="" class="cadastro">
+        <a href="../projeto_PHP/cadastro.php" class="cadastro">
             fazer cadastro
         </a>
     </header>
@@ -63,12 +66,13 @@ if($sql->rowCount() > 0){
                 <th><?php echo $cadastros['nomes'] ?></th>
                 <th><?php echo $cadastros['email'] ?></th>
                 <th>
-                    <a href="editar.php?id=<?=$cadastros['id']?>">[ Deletar ]</a>
-                    <a href="excluir.php?id=<?=$cadastros['id']?>">[ Excluir ]</a>
+                    <a href="editar.php?id=<?=$cadastros['id']?>" >[ Editar ]</a>
+                    <a href="excluir.php?id=<?=$cadastros['id']?>" onclick="return confirm('Deseja excluir mesmo?')">[ Excluir ]</a>
                 </th>
 
             </tr>
         <?php endforeach; ?>
+        
    </table> 
 </body>
 </html>

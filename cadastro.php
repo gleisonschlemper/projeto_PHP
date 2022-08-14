@@ -98,6 +98,8 @@
     <a href="https://github.com/gleisonschlemper"><img src="../projeto_PHP/photos/github.png" alt="" class="photo"></a>
     <a href=""><img src="../projeto_PHP/photos/facebook.png" alt="" class="photo"></a>
     <a href=""><img src="../projeto_PHP/photos/logotipo-do-linkedin.png" alt="" class="photo"></a>
+
+    <a href="../projeto_PHP/tabelaDeDados.php">CADASTRO</a>
    </footer>
 
    <script src="../projeto_PHP/scripts/cadastro.js"></script>
