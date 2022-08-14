@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="../projeto_PHP/styles/cadastro.css">
+    <style>
+        @media(max-width:800px){
+            body{
+                overflow: hidden;
+            }
+
+            main{
+                
+                background: red;
+            }
+
+            #conteinerSliders{
+                display: none;
+            }
+
+
+            }
+    </style>
     <title>Cadastro</title>
 </head>
 <body>   
