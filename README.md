@@ -1,3 +1,3 @@
 # projeto_PHP
 
-##fiz meu primerio projeto usando banco de dados com php 
+Fiz meu primerio projeto usando banco de dados com php 
